@@ -10,4 +10,11 @@ public interface BlogServices {
     void inputText(String inputText);
 
     String displayInputText();
+
+    void deleteInputText();
+
+    void editText(String additionalText);
+
+    void replaceText(String insertedText, String deletedText);
+
 }
