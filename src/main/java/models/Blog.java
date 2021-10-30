@@ -1,9 +1,9 @@
 package models;
 
 import lombok.Data;
+
 @Data
 
 public class Blog {
-    private String inputText;
-
+    private User user = new User();
 }
