@@ -6,16 +6,20 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BlogServicesImplTest {
-    BlogServicesImpl blogServices;
+    BlogServices blogServices;
+
     @BeforeEach
-    public void setBlogServices(){
+    void setUp() {
         blogServices = new BlogServicesImpl();
     }
 
     @Test
-    public void testThatBlogCanDisplayInputTextFromUser(){
-        blogServices.inputText("Whatever that is");
-        assertEquals("Whatever that is", blogServices.displayInputText());
+    void inputText() {
+        blogServices.inputText("Whatever this is that");
+        assertEquals("Whatever this is that", blogServices.displayInputText());
     }
 
+    @Test
+    void displayInputText() {
+    }
 }
