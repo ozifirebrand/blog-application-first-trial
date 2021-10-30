@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 
 public class Blog {
-    private User user = new User();
-
+    private Post post;
+    private User user;
 }
