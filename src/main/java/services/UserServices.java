@@ -2,14 +2,13 @@ package services;
 
 import models.User;
 
-public class UserServices {
-    private User user = new User();
+public interface UserServices {
+    public User user = new User();
 
-    public void inputText(String inputText) {
-        user.setInputText(inputText);
-    }
+    public void inputText(String inputText);
 
-    public String displayInputText() {
-        return user.getInputText();
-    }
+    public String displayInputText();
+
+    public void deleteText();
 }
+

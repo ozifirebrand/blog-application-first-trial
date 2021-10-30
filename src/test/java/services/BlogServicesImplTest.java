@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BlogServicesTest {
-    BlogServices blogServices;
+class BlogServicesImplTest {
+    BlogServicesImpl blogServices;
     @BeforeEach
     public void setBlogServices(){
-        blogServices = new BlogServices();
+        blogServices = new BlogServicesImpl();
     }
 
     @Test

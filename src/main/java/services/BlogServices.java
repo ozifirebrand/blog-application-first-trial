@@ -3,16 +3,11 @@ package services;
 import models.Blog;
 import models.User;
 
-public class BlogServices {
-    private Blog blog = new Blog();
+public interface BlogServices {
+        public Blog blog = new Blog();
+        public User user = new User();
 
-    public void inputText(String inputText) {
-        User user = blog.getUser();
-        user.setInputText(inputText);
-    }
+        public void inputText(String inputText);
 
-    public String displayInputText() {
-        User user = blog.getUser();
-        return user.getInputText();
-    }
+        public String displayInputText();
 }
