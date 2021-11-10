@@ -1,7 +1,6 @@
 package repositories;
 
 import models.Comment;
-import models.Post;
 
 import java.util.List;
 

@@ -8,6 +8,7 @@ import java.util.Map;
 
 @Data
 public class Blog {
-    private Map<Integer, User> Users = new HashMap<>();
-    private Map <Integer, Post> Post = new HashMap<>();
+    private Map<Integer, User> user = new HashMap<>();
+    private Map <Integer, Post> post = new HashMap<>();
+    private Map <Integer, Post> comments = new HashMap<>();
 }
