@@ -1,0 +1,34 @@
+Blog application has
+Users
+Posts
+
+User has 
+Posts
+User id
+First and last names
+Username
+Password
+
+Post has
+Post id
+Title
+Content
+Date and time
+
+What can models do?
+
+Blog can
+Display user information
+Display post(s)
+Register user
+Create post
+Delete post
+
+User can
+View profile
+Initiate post creation
+Initiate delete post
+Initiate edit post
+Read post-content
+
+For now

@@ -2,9 +2,12 @@ package models;
 
 import lombok.Data;
 
-@Data
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
+@Data
 public class Blog {
-    private Post post;
-    private User user;
+    private Map<Integer, User> Users = new HashMap<>();
+    private Map <Integer, Post> Post = new HashMap<>();
 }
