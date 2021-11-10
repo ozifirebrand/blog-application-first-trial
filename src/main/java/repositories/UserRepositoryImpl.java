@@ -8,30 +8,32 @@ import java.util.List;
 import java.util.Map;
 
 public class UserRepositoryImpl implements UserRepository {
-    private final Map<Integer, User> users = new HashMap<>();
+    private final Map<Integer, User> usersDatabase = new HashMap<>();
     @Override
     public User save(User user) {
-        users.put(user.getUserId(), user);
+        usersDatabase.put(user.getUserId(), user);
         return user;
     }
 
     @Override
     public void deleteUser(User user) {
-        users.remove(user.getUserId(), user);
+        usersDatabase.remove(user.getUserId(), user);
     }
 
     @Override
     public void deleteUser(Integer userId) {
+        usersDatabase.remove(userId);
 
     }
 
     @Override
     public User findUserById(Integer id) {
-        return null;
+
+        return usersDatabase.get(id);
     }
 
     @Override
     public List<User> findAll() {
-        return new ArrayList<>(users.values());
+        return new ArrayList<>(usersDatabase.values());
     }
 }
