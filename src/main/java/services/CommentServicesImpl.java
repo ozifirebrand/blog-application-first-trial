@@ -6,11 +6,7 @@ import mappers.ModelMapper;
 import models.Comment;
 import repositories.CommentRepository;
 import repositories.CommentRepositoryImpl;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 public class CommentServicesImpl implements CommentServices {
@@ -23,7 +19,7 @@ public class CommentServicesImpl implements CommentServices {
     }
 
     @Override
-    public void deleteComments() {
+    public void deleteAllComments() {
         commentRepository.deleteAll();
     }
 
@@ -32,10 +28,4 @@ public class CommentServicesImpl implements CommentServices {
         return commentRepository.findAll();
     }
 
-    @Override
-    public void deleteComment(CommentRequestPackage requestPackage) {
-        Comment comment = new Comment();
-        comment.setCommentText(requestPackage.getText());
-        commentRepository.delete(comment);
-    }
 }

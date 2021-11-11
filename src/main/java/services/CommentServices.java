@@ -8,8 +8,6 @@ import java.util.List;
 
 public interface CommentServices {
     CommentResponsePackage createComment (CommentRequestPackage addRequestPackage);
-    void deleteComments();
+    void deleteAllComments();
     List<Comment> getAllComments();
-
-    void deleteComment(CommentRequestPackage requestPackage2);
 }
