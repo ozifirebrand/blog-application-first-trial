@@ -23,17 +23,24 @@ class CommentServicesImplTest {
     void tearDown() {
     }
 
-    @Test
-    void test_createComment() {
+    public CommentResponsePackage commentTestHelper(){
         CommentRequestPackage requestPackage = new CommentRequestPackage();
         requestPackage.setText("We are communicating for your good");
-        CommentResponsePackage responsePackage =commentServices.createComment(requestPackage);
+        return commentServices.createComment(requestPackage);
+    }
+    @Test
+    void test_createComment() {
+        CommentResponsePackage responsePackage =commentTestHelper();
         assertEquals("We are communicating for your good", responsePackage.getText());
     }
 
     @Test
     void deleteComment() {
+        CommentRequestPackage requestPackage = new CommentRequestPackage();
+        requestPackage.setText("We are communicating for your good");
 
+        CommentResponsePackage responsePackage =commentTestHelper();
+        commentServices.deleteComments();
     }
 
     @Test
