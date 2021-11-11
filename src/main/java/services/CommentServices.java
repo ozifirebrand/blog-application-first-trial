@@ -2,6 +2,7 @@ package services;
 
 import dtos.requests.CommentRequestPackage;
 import dtos.response.CommentResponsePackage;
+import models.Comment;
 
 import java.util.List;
 

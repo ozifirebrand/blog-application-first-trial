@@ -6,5 +6,5 @@ import java.time.LocalDateTime;
 @Data
 public class CommentResponsePackage {
     private String text;
-    private LocalDateTime time;
+    private LocalDateTime time = LocalDateTime.now();
 }

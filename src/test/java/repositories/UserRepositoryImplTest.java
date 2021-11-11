@@ -29,7 +29,7 @@ class UserRepositoryImplTest {
     }
 
     @Test
-    void test_eleteUser() {
+    void test_deleteUser() {
         userRepository.save(user);
         assertEquals(1, userRepository.findAll().size());
 

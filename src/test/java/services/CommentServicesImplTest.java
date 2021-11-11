@@ -28,6 +28,8 @@ class CommentServicesImplTest {
         CommentRequestPackage requestPackage = new CommentRequestPackage();
         requestPackage.setText("We are communicating for your good");
         CommentResponsePackage responsePackage =commentServices.createComment(requestPackage);
+        assertEquals("We are communicating for your good", responsePackage.getText());
+
     }
 
     @Test
