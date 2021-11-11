@@ -18,6 +18,7 @@ class CommentRepositoryImplTest {
 
     @AfterEach
     void tearDown() {
+        commentRepository.deleteAll();
     }
 
     @Test
@@ -27,20 +28,15 @@ class CommentRepositoryImplTest {
 
     @Test
     void test_findByPostId() {
-        comment.setCommentId(1);
         commentRepository.save(comment);
-        assertEquals(comment, commentRepository.findByPostId(comment.getCommentId()));
+        assertEquals(comment, commentRepository.findByPostId(1));
     }
 
     @Test
     void findAll() {
-        comment.setCommentId(1);
         Comment comment1 = new Comment();
-        comment1.setCommentId(2);
         Comment comment2 = new Comment();
-        comment2.setCommentId(3);
         Comment comment3 = new Comment();
-        comment3.setCommentId(4);
         commentRepository.save(comment);
         commentRepository.save(comment1);
         commentRepository.save(comment2);
@@ -58,11 +54,16 @@ class CommentRepositoryImplTest {
 
     @Test
     void testDelete() {
-        comment.setCommentId(1);
         commentRepository.save(comment);
         assertEquals(1, commentRepository.findAll().size());
         commentRepository.delete(1);
         assertEquals(0, commentRepository.findAll().size());
 
+    }
+
+    @Test
+    public void test_idIncreases_OnCreateComment(){
+        commentRepository.save(comment);
+        assertEquals(comment, commentRepository.findByPostId(1));
     }
 }

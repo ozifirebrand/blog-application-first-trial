@@ -9,10 +9,14 @@ import java.util.Map;
 
 public class CommentRepositoryImpl implements CommentRepository {
     private final Map<Integer, Comment> commentsDatabase = new HashMap<>();
+    private Integer keyValues = 0;
     @Override
     public Comment save(Comment comment) {
+        keyValues +=1;
+        System.out.println(keyValues);
+        comment.setCommentId(keyValues);
         commentsDatabase.put(comment.getCommentId(), comment);
-        return comment;
+        return commentsDatabase.get(keyValues);
     }
 
     @Override
@@ -33,5 +37,10 @@ public class CommentRepositoryImpl implements CommentRepository {
     @Override
     public void delete(Integer commentId) {
         commentsDatabase.remove(commentId);
+    }
+
+    @Override
+    public void deleteAll() {
+        commentsDatabase.clear();
     }
 }

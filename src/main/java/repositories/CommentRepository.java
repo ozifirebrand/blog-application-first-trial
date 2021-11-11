@@ -10,4 +10,6 @@ public interface CommentRepository {
     List<Comment> findAll();
     void delete(Comment comment);
     void delete(Integer commentId);
+
+    void deleteAll();
 }

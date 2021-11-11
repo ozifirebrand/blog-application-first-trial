@@ -29,7 +29,7 @@ class CommentServicesImplTest {
         requestPackage.setText("We are communicating for your good");
         CommentResponsePackage responsePackage =commentServices.createComment(requestPackage);
         assertEquals("We are communicating for your good", responsePackage.getText());
-
+//        assertEquals(responsePackage, commentRepository.findByPostId());
     }
 
     @Test
