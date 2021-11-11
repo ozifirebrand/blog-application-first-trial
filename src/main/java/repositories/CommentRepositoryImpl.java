@@ -2,10 +2,7 @@ package repositories;
 
 import models.Comment;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CommentRepositoryImpl implements CommentRepository {
     private final Map<Integer, Comment> commentsDatabase = new HashMap<>();
@@ -20,7 +17,7 @@ public class CommentRepositoryImpl implements CommentRepository {
     }
 
     @Override
-    public Comment findByPostId(Integer commentId) {
+    public Comment findByCommentId(Integer commentId) {
         return commentsDatabase.get(commentId);
     }
 

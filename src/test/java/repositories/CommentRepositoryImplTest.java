@@ -29,7 +29,7 @@ class CommentRepositoryImplTest {
     @Test
     void test_findByPostId() {
         commentRepository.save(comment);
-        assertEquals(comment, commentRepository.findByPostId(1));
+        assertEquals(comment, commentRepository.findByCommentId(1));
     }
 
     @Test
@@ -64,6 +64,6 @@ class CommentRepositoryImplTest {
     @Test
     public void test_idIncreases_OnCreateComment(){
         commentRepository.save(comment);
-        assertEquals(comment, commentRepository.findByPostId(1));
+        assertEquals(comment, commentRepository.findByCommentId(1));
     }
 }

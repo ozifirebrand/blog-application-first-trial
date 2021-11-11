@@ -7,6 +7,7 @@ import models.Comment;
 import repositories.CommentRepository;
 import repositories.CommentRepositoryImpl;
 import java.util.List;
+import java.util.Optional;
 
 
 public class CommentServicesImpl implements CommentServices {
@@ -26,6 +27,11 @@ public class CommentServicesImpl implements CommentServices {
     @Override
     public List<Comment> getAllComments() {
         return commentRepository.findAll();
+    }
+
+    @Override
+    public Comment findCommentById(Integer postId) {
+        return null;
     }
 
 }

@@ -2,7 +2,6 @@ package services;
 
 import dtos.requests.CommentRequestPackage;
 import dtos.response.CommentResponsePackage;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import repositories.CommentRepository;
@@ -48,5 +47,12 @@ class CommentServicesImplTest {
         CommentResponsePackage commentResponse2 = commentTestHelper();
         assertEquals("We are communicating for your good", commentResponse.getText());
         assertEquals(2, commentServices.getAllComments().size());
+    }
+
+    @Test
+    public void test_findCommentById(){
+        CommentResponsePackage commentResponse = commentTestHelper();
+        CommentResponsePackage commentResponse2 = commentTestHelper();
+        assertEquals(commentRepository.findByCommentId(1), commentServices.findCommentById(1));
     }
 }
