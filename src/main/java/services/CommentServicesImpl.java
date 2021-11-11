@@ -31,4 +31,11 @@ public class CommentServicesImpl implements CommentServices {
     public List<Comment> getAllComments() {
         return commentRepository.findAll();
     }
+
+    @Override
+    public void deleteComment(CommentRequestPackage requestPackage) {
+        Comment comment = new Comment();
+        comment.setCommentText(requestPackage.getText());
+        commentRepository.delete(comment);
+    }
 }

@@ -39,11 +39,23 @@ class CommentServicesImplTest {
         CommentRequestPackage requestPackage = new CommentRequestPackage();
         requestPackage.setText("We are communicating for your good");
 
-        CommentResponsePackage responsePackage =commentTestHelper();
+        CommentResponsePackage responsePackage = commentTestHelper();
         commentServices.deleteComments();
+        assertEquals(0, commentRepository.findAll().size());
     }
 
     @Test
     void getAllComments() {
+//        CommentRequestPackage requestPackage = new CommentRequestPackage();
+//        requestPackage.setText("We are communicating for your good");
+//        commentServices.createComment(requestPackage);
+//        CommentRequestPackage requestPackage2 = new CommentRequestPackage();
+//        requestPackage2.setText("We communicate for your good");
+//        commentServices.createComment(requestPackage2);
+//        commentServices.deleteComment(requestPackage2);
+//
+//        assertEquals(1, commentRepository.findAll().size());
+//        commentServices.deleteComments();
+//        assertEquals(0, commentRepository.findAll().size());
     }
 }

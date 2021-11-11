@@ -10,4 +10,6 @@ public interface CommentServices {
     CommentResponsePackage createComment (CommentRequestPackage addRequestPackage);
     void deleteComments();
     List<Comment> getAllComments();
+
+    void deleteComment(CommentRequestPackage requestPackage2);
 }
