@@ -9,10 +9,13 @@ import java.util.Map;
 
 public class UserRepositoryImpl implements UserRepository {
     private final Map<Integer, User> usersDatabase = new HashMap<>();
+    private Integer keyValues=0;
     @Override
     public User save(User user) {
+        keyValues +=1;
+        user.setUserId(keyValues);
         usersDatabase.put(user.getUserId(), user);
-        return user;
+        return usersDatabase.get(keyValues);
     }
 
     @Override

@@ -39,21 +39,19 @@ class UserRepositoryImplTest {
 
     @Test
     void test_deleteUserById() {
-        user.setUserId(6);
         userRepository.save(user);
         assertEquals(1, userRepository.findAll().size());
 
-        userRepository.deleteUser(6);
+        userRepository.deleteUser(1);
         assertEquals(0, userRepository.findAll().size());
 
     }
 
     @Test
     void findUserById() {
-        user.setUserId(6);
         userRepository.save(user);
         assertEquals(1, userRepository.findAll().size());
-        assertEquals(user, userRepository.findUserById(6));
+        assertEquals(user, userRepository.findUserById(1));
 
     }
 

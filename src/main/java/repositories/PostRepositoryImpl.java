@@ -9,10 +9,13 @@ import java.util.Map;
 
 public class PostRepositoryImpl implements PostRepository{
     private final Map<Integer, Post> postsDatabase = new HashMap<>();
+    private Integer keyValues =0;
     @Override
     public Post save(Post post) {
+        keyValues +=1;
+        post.setPostId(keyValues);
         postsDatabase.put(post.getPostId(), post);
-        return post;
+        return postsDatabase.get(keyValues);
     }
 
     @Override
