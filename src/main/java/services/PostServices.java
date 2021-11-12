@@ -11,6 +11,5 @@ public interface PostServices {
     PostResponse createPost(PostRequest postRequest);
     List<Post> getAllPosts();
     void deleteAll();
-    Optional<Post> findPostById(Integer postId);
-
+    Post findPostById(Integer postId);
 }

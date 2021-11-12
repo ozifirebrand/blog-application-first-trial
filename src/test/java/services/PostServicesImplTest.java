@@ -1,9 +1,11 @@
 package services;
 
 import dtos.requests.PostRequest;
+import dtos.response.PostResponse;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,24 +19,42 @@ class PostServicesImplTest {
 
     @AfterEach
     void tearDown() {
+        postServices.deleteAll();
+    }
+
+    public PostResponse postServicesTestMethod(){
+        PostRequest request = new PostRequest();
+        request.setWriterName("Wale adenuga");
+        request.setText("thank you");
+        return postServices.createPost(request);
     }
 
     @Test
     void createPost() {
-        PostRequest request = new PostRequest();
-
-        postServices.createPost(request);
+        postServicesTestMethod();
+        assertEquals(1, postServices.getAllPosts().size());
     }
 
     @Test
     void getAllPosts() {
+        postServicesTestMethod();
+        assertEquals(1, postServices.getAllPosts().size());
+
     }
 
     @Test
     void deleteAll() {
+        postServicesTestMethod();
+        postServicesTestMethod();
+        postServicesTestMethod();
+        assertEquals(3, postServices.getAllPosts().size());
+        postServices.deleteAll();
+        assertEquals(0, postServices.getAllPosts().size());
     }
 
     @Test
     void findPostById() {
+        PostResponse response =  postServicesTestMethod();
+
     }
 }

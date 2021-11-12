@@ -37,4 +37,9 @@ public class PostRepositoryImpl implements PostRepository{
     public void delete(Integer postId) {
         postsDatabase.remove(postId);
     }
+
+    @Override
+    public void deleteAll() {
+        postsDatabase.clear();
+    }
 }
