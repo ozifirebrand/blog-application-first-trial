@@ -54,7 +54,12 @@ class PostServicesImplTest {
 
     @Test
     void findPostById() {
-        PostResponse response =  postServicesTestMethod();
+        PostRequest request = new PostRequest();
+        request.setWriterName("Wale adenuga");
+        request.setText("thank you");
+        PostResponse response = postServices.createPost(request);
+
+        assertEquals(postServices.createPost(request), postServices.findPostById(1));
 
     }
 }
