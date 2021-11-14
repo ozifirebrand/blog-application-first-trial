@@ -1,14 +1,16 @@
 package services;
 
+import dtos.requests.UserInfo;
 import dtos.requests.UserRequest;
 import dtos.response.UserResponse;
 import models.User;
 
+import java.util.List;
 import java.util.Map;
 
 public interface UserServices {
     UserResponse createUser (UserRequest userRequest);
-    Map<Integer, User> findAllUsers();
-    void deleteUser(User user);
-    void findUserById(Integer userId);
+    List<User> findAllUsers();
+    void deleteUser(UserInfo info);
+    User findUserById(Integer userId);
 }
