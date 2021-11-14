@@ -12,10 +12,14 @@ public class PostRepositoryImpl implements PostRepository{
     private Integer keyValues =0;
     @Override
     public Post save(Post post) {
-        keyValues +=1;
-        post.setPostId(keyValues);
+        generateKeyIdOf(post);
         postsDatabase.put(post.getPostId(), post);
         return postsDatabase.get(keyValues);
+    }
+
+    private void generateKeyIdOf(Post post) {
+        keyValues +=1;
+        post.setPostId(keyValues);
     }
 
     @Override

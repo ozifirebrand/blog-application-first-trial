@@ -1,5 +1,6 @@
 package repositories;
 
+import models.Comment;
 import models.Post;
 
 import java.util.List;
@@ -10,6 +11,5 @@ public interface PostRepository {
     List<Post> findAll();
     void delete(Post post);
     void delete(Integer postId);
-
     void deleteAll();
 }
