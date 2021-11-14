@@ -73,7 +73,7 @@ class PostServicesImplTest {
         request.setWriterName("Mosaku safunku");
         PostResponse response = postServices.createPost(request);
         Post savedPost = postServices.findPostById(response.getId());
-
-
+        assertEquals(savedPost.getPostId(), response.getId());
+        assertEquals(savedPost.getText(), response.getText());
     }
 }
