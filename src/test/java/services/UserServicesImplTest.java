@@ -3,7 +3,6 @@ package services;
 import dtos.requests.UserInfo;
 import dtos.requests.UserRequest;
 import dtos.response.UserResponse;
-import models.User;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -69,7 +68,32 @@ class UserServicesImplTest {
         request.setLastName("Adenuga");
         request.setPassword("wale88");
         request.setEmailAddress("dhe@rham.com");
-        UserResponse response = userServices.createUser(request);
+        userServices.createUser(request);
         assertNotNull(userServices.findUserById(1));
+    }
+
+    @Test
+    public void test_userCanUpdateInformation(){
+        UserRequest request = new UserRequest();
+        request.setUsername("walesade");
+        request.setFirstName("Wale");
+        request.setLastName("Adenuga");
+        request.setPassword("wale88");
+        request.setEmailAddress("dhe@rham.com");
+        userServices.createUser(request);
+
+        UserRequest request1 = new UserRequest();
+        request1.setUsername("walede");
+        request1.setFirstName("Walex");
+        request1.setLastName("Adenugah");
+        request1.setPassword("gganyde");
+        request1.setEmailAddress("hdsy@rham.com");
+        userServices.createUser(request1);
+        assertNotNull(userServices.findUserById(1));
+        assertNotNull(userServices.findUserById(2));
+        assertEquals(request1.getUsername(), userServices.findUserById(2).getUsername());
+        request1.setUsername("joyjoya");
+        request1.setFirstName("jealda");
+        assertEquals(request1.getUsername(), userServices.findUserById(2).getUsername());
     }
 }
